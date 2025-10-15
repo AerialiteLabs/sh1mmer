@@ -35,6 +35,7 @@ jobs:
           - hana
           - hatch
           - jacuzzi
+          - jacuzzi_makomo
           - kalista
           - kefka
           - kukui
@@ -71,20 +72,11 @@ jobs:
 
         chmod +x ./wax/wax.sh
         sudo apt install pv
-        if [ "${board}" == "jacuzzi" ]; then
-          board="jacuzzi_makomo"
-        fi
         echo "Downloading file from https://dl.cros.download/files/${board}/${board}.zip..."
         wget -q "https://dl.cros.download/files/${board}/${board}.zip" -O "./${board}.zip" || exit 1
         unzip "./${board}.zip"
         shim=$(unzip -Z1 "./${board}.zip")
         rm ./${board}.zip
-        if [ "${board}" == "jacuzzi_makomo" ]; then
-          makomoshim="$shim"
-          shim=$(echo "$shim" | sed 's/jacuzzi_makomo/jacuzzi/')
-          mv "$makomoshim" "$shim"
-          board="jacuzzi"
-        fi
         sudo ./wax/wax.sh -i "$shim" -p legacy
 
     - name: Upload built shim
