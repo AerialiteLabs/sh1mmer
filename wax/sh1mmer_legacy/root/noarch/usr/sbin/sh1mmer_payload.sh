@@ -68,6 +68,7 @@ mapname() {
 		'icarus.sh') echo -n "Icarus (unenrollment up to r129, by writable)";;
 		'movie.sh') echo -n "HAHA WINDOWS SUX BUT THE MOVIE" ;;
 		'mrchromebox.sh') echo -n "MrChromebox firmware-util.sh" ;;
+		'protowrite.sh') echo -n "Protowrite (unenrollment up to r145 (nissa boards only), by emerwyi)" ;;
 		'quicksilver.sh') echo -n "Quicksilver (unenrollment up to r142, by emerwyi)";;
 		'reset-kern-rollback.sh') echo -n "Reset kernel rollback version" ;;
 		'troll.sh') echo -n "hahah wouldn't it be realllly funny if you ran this payload trust me nothing bad will happen" ;;
